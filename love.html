@@ -5,235 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>💖 The "Just Because I Love You" Questionnaire 💖</title>
     <style>
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-        body {
-            background-color: #fff5f6;
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
-            color: #4a4a4a;
-            margin: 0;
-            padding: 40px 20px;
-            line-height: 1.6;
-        }
-        .container {
-            background-color: #ffffff;
-            max-width: 650px;
-            margin: 0 auto;
-            padding: 40px 35px;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(255, 117, 143, 0.15);
-            border: 2px solid #ffe5ec;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        h1 {
-            color: #c9184a;
-            font-size: 24pt;
-            margin: 0 0 10px 0;
-        }
-        .subtitle {
-            color: #ff758f;
-            font-style: italic;
-            font-size: 12pt;
-            margin: 0;
-        }
-        .instructions {
-            background-color: #fff0f3;
-            border: 2px dashed #ffb3c1;
-            padding: 20px;
-            border-radius: 16px;
-            margin-bottom: 35px;
-            text-align: center;
-            font-size: 11pt;
-            color: #5c3d46;
-        }
-        .section-title {
-            color: #c9184a;
-            font-size: 14pt;
-            border-left: 5px solid #ff758f;
-            padding-left: 12px;
-            margin-top: 35px;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        .section-desc {
-            font-size: 10pt;
-            color: #805b65;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 25px;
-            background-color: #fffbfc;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #ffe5ec;
-        }
-        th {
-            background-color: #ff758f;
-            color: white;
-            padding: 12px;
-            font-weight: 600;
-            text-align: left;
-            font-size: 11pt;
-        }
-        td {
-            padding: 14px 12px;
-            border-bottom: 1px solid #ffe5ec;
-            font-size: 10.5pt;
-            vertical-align: middle;
-        }
-        tr:last-child td {
-            border-bottom: none;
-        }
-        .choice-input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ffb3c1;
-            border-radius: 6px;
-            font-family: inherit;
-            text-align: center;
-            background-color: #ffffff;
-        }
-        .choice-input:focus {
-            outline: none;
-            border-color: #ff758f;
-            box-shadow: 0 0 0 2px rgba(255, 117, 143, 0.2);
-        }
-        .input-group {
-            margin-bottom: 22px;
-        }
-        label {
-            display: block;
-            font-weight: 600;
-            color: #5c3d46;
-            margin-bottom: 8px;
-            font-size: 11pt;
-        }
-        input[type="text"], textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ffb3c1;
-            border-radius: 10px;
-            background-color: #fffbfc;
-            color: #4a4a4a;
-            font-family: inherit;
-            font-size: 10.5pt;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-        input[type="text"]:focus, textarea:focus {
-            outline: none;
-            border-color: #ff758f;
-            box-shadow: 0 0 0 3px rgba(255, 117, 143, 0.2);
-            background-color: #ffffff;
-        }
-        textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
-        .radio-container {
-            display: block;
-            position: relative;
-            padding-left: 35px;
-            margin-bottom: 12px;
-            cursor: pointer;
-            font-size: 10.5pt;
-            user-select: none;
-            background-color: #fff0f3;
-            padding: 12px 12px 12px 40px;
-            border-radius: 10px;
-            border: 1px solid #ffe5ec;
-            transition: background-color 0.2s;
-        }
-        .radio-container:hover {
-            background-color: #ffe5ec;
-        }
-        .radio-container input {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-        }
-        .checkmark {
-            position: absolute;
-            top: 12px;
-            left: 15px;
-            height: 18px;
-            width: 18px;
-            background-color: #ffffff;
-            border: 2px solid #ffb3c1;
-            border-radius: 50%;
-        }
-        .radio-container:hover input ~ .checkmark {
-            border-color: #ff758f;
-        }
-        .radio-container input:checked ~ .checkmark {
-            background-color: #ff758f;
-            border-color: #ff758f;
-        }
-        .checkmark:after {
-            content: "";
-            position: absolute;
-            display: none;
-        }
-        .radio-container input:checked ~ .checkmark:after {
-            display: block;
-        }
-        .radio-container .checkmark:after {
-            top: 4px;
-            left: 4px;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: white;
-        }
-        .divider {
-            border: 0;
-            height: 1px;
-            background-image: linear-gradient(to right, rgba(255,117,143,0), rgba(255,117,143,0.4), rgba(255,117,143,0));
-            margin: 35px 0;
-        }
-        .submit-btn {
-            display: block;
-            width: 100%;
-            background-color: #c9184a;
-            color: white;
-            border: none;
-            padding: 15px;
-            font-size: 12pt;
-            font-weight: bold;
-            border-radius: 12px;
-            cursor: pointer;
-            margin-top: 30px;
-            transition: background-color 0.2s, transform 0.1s;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(201, 24, 74, 0.2);
-        }
-        .submit-btn:hover {
-            background-color: #ff758f;
-        }
-        .submit-btn:disabled {
-            background-color: #ffb3c1;
-            cursor: not-allowed;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 45px;
-            padding-top: 20px;
-            border-top: 1px dashed #ffb3c1;
-            font-size: 10.5pt;
-            color: #5c3d46;
-            font-weight: 600;
-        }
+        *, *::before, *::after { box-sizing: border-box; }
+        body { background-color: #fff5f6; font-family: 'Segoe UI', sans-serif; color: #4a4a4a; margin: 0; padding: 40px 20px; line-height: 1.6; }
+        .container { background-color: #ffffff; max-width: 650px; margin: 0 auto; padding: 40px 35px; border-radius: 24px; box-shadow: 0 10px 30px rgba(255, 117, 143, 0.15); border: 2px solid #ffe5ec; }
+        .header { text-align: center; margin-bottom: 30px; }
+        h1 { color: #c9184a; font-size: 24pt; margin: 0 0 10px 0; }
+        .subtitle { color: #ff758f; font-style: italic; font-size: 12pt; margin: 0; }
+        .instructions { background-color: #fff0f3; border: 2px dashed #ffb3c1; padding: 20px; border-radius: 16px; margin-bottom: 35px; text-align: center; font-size: 11pt; color: #5c3d46; }
+        .section-title { color: #c9184a; font-size: 14pt; border-left: 5px solid #ff758f; padding-left: 12px; margin-top: 35px; margin-bottom: 5px; font-weight: bold; }
+        .section-desc { font-size: 10pt; color: #805b65; margin-bottom: 20px; font-style: italic; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 25px; background-color: #fffbfc; border-radius: 12px; overflow: hidden; border: 1px solid #ffe5ec; }
+        th { background-color: #ff758f; color: white; padding: 12px; font-weight: 600; text-align: left; font-size: 11pt; }
+        td { padding: 14px 12px; border-bottom: 1px solid #ffe5ec; font-size: 10.5pt; vertical-align: middle; }
+        tr:last-child td { border-bottom: none; }
+        .choice-input { width: 100%; padding: 8px; border: 1px solid #ffb3c1; border-radius: 6px; text-align: center; }
+        .input-group { margin-bottom: 22px; }
+        label { display: block; font-weight: 600; color: #5c3d46; margin-bottom: 8px; font-size: 11pt; }
+        input[type="text"], textarea { width: 100%; padding: 12px; border: 1px solid #ffb3c1; border-radius: 10px; background-color: #fffbfc; font-family: inherit; font-size: 10.5pt; }
+        textarea { resize: vertical; min-height: 80px; }
+        .radio-container { display: block; position: relative; margin-bottom: 12px; cursor: pointer; font-size: 10.5pt; background-color: #fff0f3; padding: 12px 12px 12px 40px; border-radius: 10px; border: 1px solid #ffe5ec; }
+        .radio-container input { position: absolute; opacity: 0; }
+        .checkmark { position: absolute; top: 12px; left: 15px; height: 18px; width: 18px; background-color: #ffffff; border: 2px solid #ffb3c1; border-radius: 50%; }
+        .radio-container input:checked ~ .checkmark { background-color: #ff758f; border-color: #ff758f; }
+        .radio-container .checkmark:after { content: ""; position: absolute; display: none; top: 4px; left: 4px; width: 6px; height: 6px; border-radius: 50%; background: white; }
+        .radio-container input:checked ~ .checkmark:after { display: block; }
+        .divider { border: 0; height: 1px; background-image: linear-gradient(to right, rgba(255,117,143,0), rgba(255,117,143,0.4), rgba(255,117,143,0)); margin: 35px 0; }
+        .submit-btn { display: block; width: 100%; background-color: #c9184a; color: white; border: none; padding: 15px; font-size: 12pt; font-weight: bold; border-radius: 12px; cursor: pointer; margin-top: 30px; text-align: center; box-shadow: 0 4px 12px rgba(201, 24, 74, 0.2); }
+        .submit-btn:hover { background-color: #ff758f; }
+        .footer { text-align: center; margin-top: 45px; padding-top: 20px; border-top: 1px dashed #ffb3c1; font-size: 10.5pt; color: #5c3d46; font-weight: 600; }
     </style>
-
-    <!-- Firebase App and Database Compatibility SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
 </head>
 <body>
 
@@ -244,15 +44,12 @@
         </div>
 
         <div class="instructions">
-            ✨ <strong>Instructions:</strong> Grab your favorite cozy drink, find a comfy spot, and fill this out. There are no wrong answers, but turning it in guarantees a huge hug and your favorite treat! 🥰
+            ✨ <strong>Instructions:</strong> Grab your favorite cozy drink, find a comfy spot, and fill this out. 🥰
         </div>
 
         <form id="questionnaire-form" onsubmit="submitForm(event)">
             
-            <!-- ROUND 1 -->
             <div class="section-title">🦄 Round 1: This or That</div>
-            <div class="section-desc">Put your favorite emoji or a checkmark next to your choice!</div>
-            
             <table>
                 <thead>
                     <tr>
@@ -262,101 +59,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Forehead kisses 💋</td>
-                        <td>Holding hands 🤝</td>
-                        <td><input type="text" name="round1_kisses_vs_hands" class="choice-input" placeholder="✨"></td>
-                    </tr>
-                    <tr>
-                        <td>Lazy movie night in 🍿</td>
-                        <td>Fancy dinner date out 💄</td>
-                        <td><input type="text" name="round1_movie_vs_dinner" class="choice-input" placeholder="✨"></td>
-                    </tr>
-                    <tr>
-                        <td>Sweet morning texts ☀️</td>
-                        <td>Long late-night calls 🌙</td>
-                        <td><input type="text" name="round1_texts_vs_calls" class="choice-input" placeholder="✨"></td>
-                    </tr>
-                    <tr>
-                        <td>Big, exciting surprises 🎉</td>
-                        <td>Spontaneous little gifts 🎁</td>
-                        <td><input type="text" name="round1_surprises_vs_gifts" class="choice-input" placeholder="✨"></td>
-                    </tr>
-                    <tr>
-                        <td>Going out for ice cream 🍦</td>
-                        <td>Baking dessert together 🍰</td>
-                        <td><input type="text" name="round1_icecream_vs_baking" class="choice-input" placeholder="✨"></td>
-                    </tr>
+                    <tr><td>Forehead kisses 💋</td><td>Holding hands 🤝</td><td><input type="text" name="Kisses vs Hands" class="choice-input" placeholder="✨"></td></tr>
+                    <tr><td>Lazy movie night in 🍿</td><td>Fancy dinner date out 💄</td><td><input type="text" name="Movie vs Dinner" class="choice-input" placeholder="✨"></td></tr>
+                    <tr><td>Sweet morning texts ☀️</td><td>Long late-night calls 🌙</td><td><input type="text" name="Texts vs Calls" class="choice-input" placeholder="✨"></td></tr>
                 </tbody>
             </table>
 
             <div class="divider"></div>
 
-            <!-- ROUND 2 -->
-            <div class="section-title">🍕 Round 2: The "Keep Me Happy" Database</div>
-            <div class="section-desc">Help me keep my records 100% updated so I can spoil you perfectly.</div>
-
+            <div class="section-title">🍕 Round 2: The Database</div>
             <div class="input-group">
-                <label for="comfort-food">What is your ultimate comfort food after a long, exhausting day? 🍓</label>
-                <input type="text" id="comfort-food" name="round2_comfort_food" placeholder="Type your favorite food here...">
+                <label for="comfort-food">What is your ultimate comfort food after a long day? 🍓</label>
+                <input type="text" id="comfort-food" name="Comfort Food" placeholder="Type here...">
             </div>
-
             <div class="input-group">
-                <label for="happy-song">What is a song that instantly puts you in a dance-around-the-room mood? 🎶</label>
-                <input type="text" id="happy-song" name="round2_happy_song" placeholder="Song title and artist...">
-            </div>
-
-            <div class="input-group">
-                <label for="teleport-date">If we could magically teleport anywhere for a 24-hour date right now, where are we going? ✈️</label>
-                <input type="text" id="teleport-date" name="round2_teleport_destination" placeholder="Dream destination...">
-            </div>
-
-            <div class="input-group">
-                <label for="fav-thing">What is your current favorite flower, aesthetic, or little thing that always makes you smile? 🌸</label>
-                <input type="text" id="fav-thing" name="round2_favorite_aesthetic" placeholder="Tulips, clear skies, fairy lights...">
+                <label for="happy-song">What is a song that instantly puts you in a good mood? 🎶</label>
+                <input type="text" id="happy-song" name="Happy Song" placeholder="Song title...">
             </div>
 
             <div class="divider"></div>
 
-            <!-- ROUND 3 -->
-            <div class="section-title">🎬 Round 3: Memory Lane & Future Adventures</div>
-            <div class="section-desc">A little look back, and a little look forward.</div>
-
-            <div class="input-group">
-                <label for="early-date">What is a tiny detail you remember about our meetings that made you think, "Oh, I really like him"? 💭</label>
-                <textarea id="early-date" name="round3_early_memory" placeholder="Share a sweet memory..."></textarea>
-            </div>
-
-            <div class="input-group">
-                <label for="next-adventure">What is a new hobby, restaurant, or place you really want us to try out next? 🗺️</label>
-                <textarea id="next-adventure" name="round3_next_adventure" placeholder="Something fun you want to do together..."></textarea>
-            </div>
-
-            <div class="input-group">
-                <label for="safest-moment">When do you feel the absolute safest or most loved when we are with people? 🧸</label>
-                <textarea id="safest-moment" name="round3_safest_moment" placeholder="When you wrap your arms around me / when we laugh..."></textarea>
-            </div>
-
-            <div class="divider"></div>
-
-            <!-- ROUND 4 -->
-            <div class="section-title">🎁 Round 4: The Immediate Reward</div>
-            <div class="section-desc">If you could unlock one "coupon" right now that I have to fulfill immediately, which one are you picking?</div>
-
+            <div class="section-title">🎁 Round 3: The Immediate Reward</div>
             <label class="radio-container">A relaxing 30-minute massage 💆‍♀️
-                <input type="radio" name="round4_coupon" value="30-Minute Massage">
+                <input type="radio" name="Chosen Reward" value="30-Minute Massage">
                 <span class="checkmark"></span>
             </label>
-            <label class="radio-container">An instant delivery of your absolute favorite food 🍕
-                <input type="radio" name="round4_coupon" value="Instant Food Delivery">
-                <span class="checkmark"></span>
-            </label>
-            <label class="radio-container">Total, uninterrupted control over the playlist/TV remote tonight 📺
-                <input type="radio" name="round4_coupon" value="TV/Playlist Control">
-                <span class="checkmark"></span>
-            </label>
-            <label class="radio-container">A giant, warm, bone-crushing bear hug right this second 🐻
-                <input type="radio" name="round4_coupon" value="Giant Bear Hug">
+            <label class="radio-container">A giant, warm bear hug right this second 🐻
+                <input type="radio" name="Chosen Reward" value="Giant Bear Hug">
                 <span class="checkmark"></span>
             </label>
 
@@ -369,64 +98,41 @@
     </div>
 
     <script>
-        // 🚨 PASTE YOUR CONFIG OBJECT COPIED FROM FIREBASE HERE 🚨
-        const firebaseConfig = {
-            apiKey: "AIzaSyC1-q0vWrLdXCgdzsfRZU3_m9WDCwi_Tgk",
-            authDomain: "love-766f9.firebaseapp.com",
-            databaseURL: "https://love-766f9-default-rtdb.europe-west1.firebasedatabase.app",
-            projectId: "love-766f9",
-            storageBucket: "love-766f9.firebasestorage.app",
-            messagingSenderId: "724582804314",
-            appId: "1:724582804314:web:60d90ccf6f80587f47a163", 
-            measurementId: "G-5WNXR7K1Y8"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const database = firebase.database();
-
         function submitForm(event) {
             event.preventDefault();
             
-            if (firebaseConfig.apiKey === "YOUR_API_KEY") {
-                alert("Don't forget to paste your unique Firebase Configuration object into the script block!");
+            // 🚨 PUT YOUR ACTUAL EMAIL HERE 🚨
+            const myEmail = "YOUR_EMAIL@EXAMPLE.COM"; 
+
+            if (myEmail.includes("EXAMPLE.COM")) {
+                alert("Please open the code and replace YOUR_EMAIL@EXAMPLE.COM with your real email!");
                 return;
             }
 
             const form = document.getElementById('questionnaire-form');
             const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-            
-            // Add a timestamp so you know exactly when she sent it
-            data.submittedAt = new Date().toLocaleString();
-
             const btn = document.querySelector('.submit-btn');
-            btn.innerText = "Sending telemetry to your fan... 🚀";
+            
+            btn.innerText = "Sending... 💕";
             btn.disabled = true;
 
-            // Push JSON entry to Firebase Realtime Database
-            database.ref('responses').push(data)
-            .then(() => {
-                // Smooth transition UI modification upon successful database entry
+            fetch(`https://formsubmit.co/ajax/${myEmail}`, {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(Object.fromEntries(formData))
+            })
+            .then(res => res.json())
+            .then(data => {
                 document.getElementById('questionnaire-form').innerHTML = `
                     <div style="text-align: center; padding: 40px 10px;">
-                        <h2 style="color: #c9184a; font-size: 22pt; margin-bottom: 20px;">💖 Answers Transmitted to My Heart! 💖</h2>
-                        <p style="font-size: 12pt; color: #4a4a4a; line-height: 1.8; margin-bottom: 35px;">
-                            Thank you for completing this, beautiful! Your answers have been securely synced directly to your biggest fan's database. 
-                            <br><br>
-                            <strong>Your immediate rewards have been unlocked:</strong><br>
-                            ✨ 1x Infinite supply of sweet forehead kisses<br>
-                            ✨ 1x Giant warm bear hug<br>
-                            ✨ Your favorite comfort snack (order pending!)
-                        </p>
-                        <span style="font-size: 50pt; display: block; margin-top: 20px;">🥰💋💌🧁</span>
-                    </div>
-                `;
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                        <h2 style="color: #c9184a; font-size: 22pt;">💖 Answers Transmitted! 💖</h2>
+                        <p style="font-size: 12pt; color: #4a4a4a;">Your answers have been sent directly to his inbox!</p>
+                        <span style="font-size: 50pt; display: block;">🥰💋💌</span>
+                    </div>`;
             })
-            .catch(error => {
-                console.error("Firebase Sync Error: ", error);
-                alert("Something hit a snag. Please let him know directly! 💕");
-                btn.innerText = "✨ Submit to Your Biggest Fan ✨";
+            .catch(err => {
+                alert("Error sending. Just take a screenshot for him! 💕");
+                btn.innerText = "✨ Submit ✨";
                 btn.disabled = false;
             });
         }
