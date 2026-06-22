@@ -230,6 +230,10 @@
             font-weight: 600;
         }
     </style>
+
+    <!-- Firebase App and Database Compatibility SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
 </head>
 <body>
 
@@ -245,6 +249,7 @@
 
         <form id="questionnaire-form" onsubmit="submitForm(event)">
             
+            <!-- ROUND 1 -->
             <div class="section-title">🦄 Round 1: This or That</div>
             <div class="section-desc">Put your favorite emoji or a checkmark next to your choice!</div>
             
@@ -260,95 +265,98 @@
                     <tr>
                         <td>Forehead kisses 💋</td>
                         <td>Holding hands 🤝</td>
-                        <td><input type="text" name="Forehead Kisses vs Holding Hands" class="choice-input" placeholder="✨"></td>
+                        <td><input type="text" name="round1_kisses_vs_hands" class="choice-input" placeholder="✨"></td>
                     </tr>
                     <tr>
                         <td>Lazy movie night in 🍿</td>
                         <td>Fancy dinner date out 💄</td>
-                        <td><input type="text" name="Movie Night vs Fancy Dinner" class="choice-input" placeholder="✨"></td>
+                        <td><input type="text" name="round1_movie_vs_dinner" class="choice-input" placeholder="✨"></td>
                     </tr>
                     <tr>
                         <td>Sweet morning texts ☀️</td>
                         <td>Long late-night calls 🌙</td>
-                        <td><input type="text" name="Morning Texts vs Late Night Calls" class="choice-input" placeholder="✨"></td>
+                        <td><input type="text" name="round1_texts_vs_calls" class="choice-input" placeholder="✨"></td>
                     </tr>
                     <tr>
                         <td>Big, exciting surprises 🎉</td>
                         <td>Spontaneous little gifts 🎁</td>
-                        <td><input type="text" name="Big Surprises vs Little Gifts" class="choice-input" placeholder="✨"></td>
+                        <td><input type="text" name="round1_surprises_vs_gifts" class="choice-input" placeholder="✨"></td>
                     </tr>
                     <tr>
                         <td>Going out for ice cream 🍦</td>
                         <td>Baking dessert together 🍰</td>
-                        <td><input type="text" name="Ice Cream vs Baking" class="choice-input" placeholder="✨"></td>
+                        <td><input type="text" name="round1_icecream_vs_baking" class="choice-input" placeholder="✨"></td>
                     </tr>
                 </tbody>
             </table>
 
             <div class="divider"></div>
 
+            <!-- ROUND 2 -->
             <div class="section-title">🍕 Round 2: The "Keep Me Happy" Database</div>
             <div class="section-desc">Help me keep my records 100% updated so I can spoil you perfectly.</div>
 
             <div class="input-group">
                 <label for="comfort-food">What is your ultimate comfort food after a long, exhausting day? 🍓</label>
-                <input type="text" id="comfort-food" name="Comfort Food" placeholder="Type your favorite food here...">
+                <input type="text" id="comfort-food" name="round2_comfort_food" placeholder="Type your favorite food here...">
             </div>
 
             <div class="input-group">
                 <label for="happy-song">What is a song that instantly puts you in a dance-around-the-room mood? 🎶</label>
-                <input type="text" id="happy-song" name="Happy Mood Song" placeholder="Song title and artist...">
+                <input type="text" id="happy-song" name="round2_happy_song" placeholder="Song title and artist...">
             </div>
 
             <div class="input-group">
                 <label for="teleport-date">If we could magically teleport anywhere for a 24-hour date right now, where are we going? ✈️</label>
-                <input type="text" id="teleport-date" name="Teleport Destination" placeholder="Dream destination...">
+                <input type="text" id="teleport-date" name="round2_teleport_destination" placeholder="Dream destination...">
             </div>
 
             <div class="input-group">
                 <label for="fav-thing">What is your current favorite flower, aesthetic, or little thing that always makes you smile? 🌸</label>
-                <input type="text" id="fav-thing" name="Favorite Aesthetic/Little Thing" placeholder="Tulips, clear skies, fairy lights...">
+                <input type="text" id="fav-thing" name="round2_favorite_aesthetic" placeholder="Tulips, clear skies, fairy lights...">
             </div>
 
             <div class="divider"></div>
 
+            <!-- ROUND 3 -->
             <div class="section-title">🎬 Round 3: Memory Lane & Future Adventures</div>
             <div class="section-desc">A little look back, and a little look forward.</div>
 
             <div class="input-group">
                 <label for="early-date">What is a tiny detail you remember about our early dates that made you think, "Oh, I really like him"? 💭</label>
-                <textarea id="early-date" name="Sweet Early Memory" placeholder="Share a sweet memory..."></textarea>
+                <textarea id="early-date" name="round3_early_memory" placeholder="Share a sweet memory..."></textarea>
             </div>
 
             <div class="input-group">
                 <label for="next-adventure">What is a new hobby, restaurant, or place you really want us to try out next? 🗺️</label>
-                <textarea id="next-adventure" name="Next Adventure Idea" placeholder="Something fun you want to do together..."></textarea>
+                <textarea id="next-adventure" name="round3_next_adventure" placeholder="Something fun you want to do together..."></textarea>
             </div>
 
             <div class="input-group">
                 <label for="safest-moment">When do you feel the absolute safest or most loved when we are together? 🧸</label>
-                <textarea id="safest-moment" name="When She Feels Safest/Most Loved" placeholder="When you wrap your arms around me / when we laugh..."></textarea>
+                <textarea id="safest-moment" name="round3_safest_moment" placeholder="When you wrap your arms around me / when we laugh..."></textarea>
             </div>
 
             <div class="divider"></div>
 
+            <!-- ROUND 4 -->
             <div class="section-title">🎁 Round 4: The Immediate Reward</div>
             <div class="section-desc">If you could unlock one "coupon" right now that I have to fulfill immediately, which one are you picking?</div>
 
             <label class="radio-container">A relaxing 30-minute massage 💆‍♀️
-                <input type="radio" name="Chosen Reward Coupon" value="30-Minute Massage">
+                <input type="radio" name="round4_coupon" value="30-Minute Massage">
                 <span class="checkmark"></span>
             </label>
             <label class="radio-container">An instant delivery of your absolute favorite food 🍕
-                <input type="radio" name="Chosen Reward Coupon" value="Instant Food Delivery">
+                <input type="radio" name="round4_coupon" value="Instant Food Delivery">
                 <span class="checkmark"></span>
             </label>
             <label class="radio-container">Total, uninterrupted control over the playlist/TV remote tonight 📺
-                <input type="radio" name="Chosen Reward Coupon" value="TV/Playlist Control">
+                <input type="radio" name="round4_coupon" value="TV/Playlist Control">
                 <span class="checkmark"></span>
             </label>
             <label class="radio-container">A giant, warm, bone-crushing bear hug right this second 🐻
-                <input type="radio" name="Chosen Reward Coupon" value="Giant Bear Hug">
+                <input type="radio" name="round4_coupon" value="Giant Bear Hug">
                 <span class="checkmark"></span>
             </label>
 
@@ -361,39 +369,49 @@
     </div>
 
     <script>
+        // 🚨 PASTE YOUR CONFIG OBJECT COPIED FROM FIREBASE HERE 🚨
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            databaseURL: "YOUR_DATABASE_URL",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
         function submitForm(event) {
             event.preventDefault();
             
-            // 🚨 CHANGE THIS TO YOUR ACTUAL EMAIL ADDRESS 🚨
-            const email = "ridwanbirre23@gmail.com"; 
-            
-            if (email === "ridwanbirre23@gmail.com") {
+            if (firebaseConfig.apiKey === "YOUR_API_KEY") {
+                alert("Don't forget to paste your unique Firebase Configuration object into the script block!");
+                return;
+            }
 
             const form = document.getElementById('questionnaire-form');
             const formData = new FormData(form);
-            const btn = document.querySelector('.submit-btn');
+            const data = Object.fromEntries(formData);
             
-            // Give her visual confirmation it's sending
-            btn.innerText = "Sending to your biggest fan... 💕";
+            // Add a timestamp so you know exactly when she sent it
+            data.submittedAt = new Date().toLocaleString();
+
+            const btn = document.querySelector('.submit-btn');
+            btn.innerText = "Sending telemetry to your fan... 🚀";
             btn.disabled = true;
 
-            // Silently emails the formatted data directly to you
-            fetch(`https://formsubmit.co/ajax/${email}`, {
-                method: "POST",
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(Object.fromEntries(formData))
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Show cute success screen without redirecting her away
+            // Push JSON entry to Firebase Realtime Database
+            database.ref('responses').push(data)
+            .then(() => {
+                // Smooth transition UI modification upon successful database entry
                 document.getElementById('questionnaire-form').innerHTML = `
                     <div style="text-align: center; padding: 40px 10px;">
                         <h2 style="color: #c9184a; font-size: 22pt; margin-bottom: 20px;">💖 Answers Transmitted to My Heart! 💖</h2>
                         <p style="font-size: 12pt; color: #4a4a4a; line-height: 1.8; margin-bottom: 35px;">
-                            Thank you for completing this, beautiful! Your answers have been securely sent directly to your biggest fan. 
+                            Thank you for completing this, beautiful! Your answers have been securely synced directly to your biggest fan's database. 
                             <br><br>
                             <strong>Your immediate rewards have been unlocked:</strong><br>
                             ✨ 1x Infinite supply of sweet forehead kisses<br>
@@ -406,8 +424,8 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             })
             .catch(error => {
-                console.error('Error:', error);
-                alert("Oops! Something went wrong sending the answers. Please take a screenshot or tell him directly! 💕");
+                console.error("Firebase Sync Error: ", error);
+                alert("Something hit a snag. Please let him know directly! 💕");
                 btn.innerText = "✨ Submit to Your Biggest Fan ✨";
                 btn.disabled = false;
             });
